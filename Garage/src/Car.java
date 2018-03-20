@@ -4,8 +4,8 @@ class Car extends MyVehicles {
 	private int passengerSeats; 
 	private boolean boot = true;
 
-	Car (int ID, String vehicleType, String vehicleName, int passengerSeats, boolean boot) {
-		super (ID, vehicleType, vehicleName);
+	Car (int ID, String vehicleType, String vehicleName, int bill, int passengerSeats, boolean boot) {
+		super (ID, vehicleType, vehicleName, bill);
 		this.passengerSeats = passengerSeats;
 		this.boot = boot;
 	}

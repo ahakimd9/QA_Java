@@ -3,8 +3,8 @@ class Vans extends MyVehicles {
 
 	private boolean roofRack = true;
 
-	Vans (int ID, String vehicleType, String vehicleName, boolean roofRack) {
-		super (ID, vehicleType, vehicleName);
+	Vans (int ID, String vehicleType, String vehicleName, int bill, boolean roofRack) {
+		super (ID, vehicleType, vehicleName, bill);
 		this.roofRack = roofRack;
 	}
 	

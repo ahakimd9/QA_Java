@@ -1,23 +1,37 @@
+import java.util.*;
 
 public class Garage {
 
 	public static void main(String[] args) {
-		Car mustang = new Car (1, "Car", "Mustang", 4, true);
-		Car nissanGTR = new Car (2, "Car", "GTR", 2, true);
-		Helicopter boeing = new Helicopter (24, "Heli", "Boeing AH-64 Apache", true);
-		Vans vito = new Vans (13, "Van", "Vito", true);
 		
-		/*mustang.print();
-		nissanGTR.print();
-		boeing.print();
-		vito.print();*/
+		List<MyVehicles> vehicles = new ArrayList<MyVehicles>();
 		
-		MyVehicles vehicles[] = {mustang, nissanGTR, boeing, vito}; 
+		vehicles.add(new MyVehicles (1, "Car", "Mustang", 15));
+		vehicles.add(new MyVehicles (2, "Car", "Nissan GTR", 20));
+		vehicles.add(new MyVehicles (3, "Car", "Jaguar XJ", 13));
+		vehicles.add(new MyVehicles (24, "Heli", "Boeing AH-64 Apache", 35));
+		vehicles.add(new MyVehicles (13, "Van", "Vito", 9));
+		vehicles.add(new MyVehicles (14, "Van", "Ford Transit", 8));
+
+		Filter car = new FilterCars();
+		Filter heli = new FilterHelicopters();
+		Filter van = new FilterVans();
+		//Filter CarVan = new AndFilter(car, van);
 		
-		for (int i = 0; i < vehicles.length; i++) {
-			System.out.println(vehicles[i].getID());
-		}
+		System.out.println("Cars: ");
+	    printVehicles(car.meetFilter(vehicles));
+	    
+		System.out.println("Helicopters: ");
+	    printVehicles(heli.meetFilter(vehicles));
 		
+		System.out.println("Vans: ");
+	    printVehicles(van.meetFilter(vehicles));
 	}
-	
+	    public static void printVehicles(List<MyVehicles> vehicles){
+	    	   
+	        for (MyVehicles vehicle : vehicles) {
+	           System.out.println("[ID: " + vehicle.getID() + ", Type: " + vehicle.getVehicleType() + ", Name: " + vehicle.getVehicleName() + ", Bill: " + vehicle.getBill() + "]");
+	        
+	     }      
+	  }
 }

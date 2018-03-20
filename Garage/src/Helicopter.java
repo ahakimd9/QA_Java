@@ -3,8 +3,8 @@ class Helicopter extends MyVehicles {
 
 	private boolean canFly = true;
 
-	Helicopter (int ID, String vehicleType, String vehicleName, boolean canFly) {
-		super (ID, vehicleType, vehicleName);
+	Helicopter (int ID, String vehicleType, String vehicleName, int bill, boolean canFly) {
+		super (ID, vehicleType, vehicleName, bill);
 		this.canFly = canFly;
 	}
 	
